@@ -1,0 +1,6 @@
+{
+  "name": "Cocoon Việt Nam - Mỹ phẩm thuần chay",
+  "description": "Khám phá mỹ phẩm thuần chay Cocoon lấy cảm hứng từ nguyên liệu Việt Nam. Tìm sản phẩm chăm sóc da, cơ thể và tóc phù hợp với nhu cầu của bạn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

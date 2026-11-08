@@ -3,13 +3,13 @@ import { Product, Ingredient, Certification, RoutineNeed, ReviewItem } from '../
 export const ANNOUNCEMENT_ITEMS = [
   {
     id: 'intro',
-    text: 'Khám phá thế giới chăm sóc da và tóc thuần chay từ nguyên liệu Việt Nam.',
+    text: 'Khám phá thế giới mỹ phẩm thuần chay 100% từ nông sản bản địa Việt Nam.',
     cta: 'Khám phá sản phẩm',
     target: '#products'
   },
   {
     id: 'policy',
-    text: 'Ưu đãi và chính sách giao hàng: Miễn phí vận chuyển cho đơn hàng từ 249.000đ · Tặng mẫu thử nguyên liệu bản địa.',
+    text: 'Chính sách chính hãng: Miễn phí vận chuyển toàn quốc cho đơn hàng từ 249.000đ · Đổi trả trong 7 ngày.',
     cta: 'Xem ưu đãi',
     target: '#products'
   }
@@ -18,76 +18,34 @@ export const ANNOUNCEMENT_ITEMS = [
 export const CATEGORIES_DATA = [
   {
     id: 'skincare',
-    name: 'Chăm sóc da',
-    description: 'Làm sạch, dưỡng ẩm, cân bằng dầu thừa và chăm sóc chuyên sâu theo từng nhu cầu da.',
-    itemCount: '18 sản phẩm'
+    name: 'Chăm sóc da mặt',
+    description: 'Nước sen Hậu Giang làm dịu và phục hồi hàng rào độ ẩm cho làn da rất nhạy cảm.',
+    itemCount: 'Nước sen Hậu Giang'
   },
   {
     id: 'bodycare',
     name: 'Chăm sóc cơ thể',
-    description: 'Làm sạch êm dịu, tẩy tế bào chết hạt cà phê Đắk Lắk và dưỡng thể mềm mượt.',
-    itemCount: '12 sản phẩm'
+    description: 'Cà phê Đắk Lắk làm sạch da chết toàn thân kết hợp bơ ca cao Tiền Giang béo mịn.',
+    itemCount: 'Cà phê Đắk Lắk'
   },
   {
     id: 'haircare',
     name: 'Chăm sóc tóc',
-    description: 'Dầu gội, dầu xả và nước dưỡng tóc tinh dầu bưởi giúp giảm gãy rụng và phục hồi nang tóc.',
-    itemCount: '9 sản phẩm'
+    description: 'Nước dưỡng tóc và Dầu xả bưởi giúp nuôi dưỡng nang tóc, giảm gãy rụng và làm mềm tóc.',
+    itemCount: 'Bưởi Việt Nam'
   },
   {
     id: 'lipcare',
     name: 'Dưỡng môi',
-    description: 'Tẩy tế bào chết môi và son dưỡng ẩm hằng ngày từ bơ hạt mỡ và cà phê Đắk Lắk.',
-    itemCount: '6 sản phẩm'
-  },
-  {
-    id: 'combo',
-    name: 'Combo / Travel Kit',
-    description: 'Lựa chọn phối hợp theo bộ chăm sóc toàn diện hoặc thuận tiện khi công tác, du lịch.',
-    itemCount: '8 combo'
-  },
-  {
-    id: 'refill',
-    name: 'Túi refill',
-    description: 'Lựa chọn nạp lại sản phẩm dung tích lớn, giúp giảm đến 80% rác thải nhựa bao bì.',
-    itemCount: '5 phiên bản refill'
+    description: 'Son dưỡng dầu dừa Bến Tre dồi dào chất béo tự nhiên cho đôi môi mềm mịn suốt cả ngày.',
+    itemCount: 'Dừa Bến Tre'
   }
 ];
 
-export const PRODUCTS_DATA: Product[] = [
-  {
-    id: 'nuoc-tay-trang-bi-dao',
-    name: 'Nước tẩy trang bí đao',
-    vietnameseName: 'Nước tẩy trang bí đao Cocoon',
-    subtitle: 'Winter Melon Micellar Water',
-    category: 'skincare',
-    categoryLabel: 'Chăm sóc da',
-    capacity: '500ml',
-    capacities: ['140ml', '500ml'],
-    price: 295000,
-    originalPrice: 320000,
-    ingredientKey: 'Bí đao',
-    ingredientRegion: 'Việt Nam',
-    description: 'Với công nghệ Micellar hiện đại cùng chiết xuất bí đao tự nhiên, nước tẩy trang giúp làm sạch sâu lớp trang điểm, bụi bẩn và dầu thừa mà không làm khô căng hay cay mắt.',
-    benefits: [
-      'Làm sạch sâu bụi mịn PM2.5, bã nhờn và cặn trang điểm',
-      'Kiểm soát lượng dầu thừa, hỗ trợ ngăn ngừa mụn hình thành',
-      'Chiết xuất bí đao, rau má và tràm trà làm dịu làn da mẩn đỏ',
-      'Độ pH chuẩn 5.5 cân bằng, không cồn, không paraben'
-    ],
-    mainIngredients: [
-      'Bí đao (Benincasa Cerifera): Kháng viêm, làm mát và điều tiết bã nhờn',
-      'Rau má (Centella Asiatica): Tăng sinh collagen, làm dịu da nhạy cảm',
-      'Tinh dầu tràm trà (Tea Tree): Giảm khuẩn và làm xẹp nốt mụn sưng',
-      'Betaine: Giữ ẩm từ củ cải đường tự nhiên'
-    ],
-    usage: 'Thấm đều sản phẩm lên bông tẩy trang rồi nhẹ nhàng lau khắp mặt và cổ theo chiều cấu tạo da. Không cần rửa lại với nước.',
-    rating: 4.9,
-    reviewCount: 3840,
-    badge: 'Bán chạy nhất',
-    texture: 'Dạng nước trong suốt thanh mát, hương thơm thảo mộc tự nhiên',
-    colorHex: '#3A5B47'
-  },
+/**
+ * Curated authentic Cocoon products with 100% real product photography uploaded by the user
+ */
+export const PRODUCTS_DATA: (Product & { visualType: 'bi-dao-cleanser' | 'coffee-body' | 'pomelo-hair' | 'turmeric-mask' | 'sen-cleanser' | 'coconut-lip' | 'coffee-lip' | 'coffee-refill' })[] = [
   {
     id: 'ca-phe-dak-lak-tay-da-chet-co-the',
     name: 'Cà phê Đắk Lắk làm sạch da chết cơ thể',
@@ -96,237 +54,169 @@ export const PRODUCTS_DATA: Product[] = [
     category: 'bodycare',
     categoryLabel: 'Chăm sóc cơ thể',
     capacity: '200ml',
-    capacities: ['200ml', '600ml'],
-    price: 165000,
-    originalPrice: 185000,
+    capacities: ['200ml'],
+    price: 139000,
+    originalPrice: 165000,
     ingredientKey: 'Cà phê Đắk Lắk',
-    ingredientRegion: 'Tây Nguyên, Đắk Lắk',
-    description: 'Hạt cà phê Đắk Lắk nguyên chất được xay nhuyễn và sàng lọc tỉ lệ chuẩn, hòa quyện cùng bơ cacao Tiền Giang béo ngậy giúp nhẹ nhàng lấy đi lớp da chết sần sùi, mang lại làn da body sáng mịn, ẩm mượt.',
+    ingredientRegion: 'Đắk Lắk, Tây Nguyên',
+    description: 'Hạt cà phê Đắk Lắk nguyên chất được xay nhuyễn và sàng lọc tỉ lệ chuẩn, hòa quyện cùng bơ ca cao Tiền Giang dồi dào chất béo thực vật giúp lấy đi lớp sừng già cỗi trên cơ thể, mang lại làn da mềm mịn, tươi sáng ngay sau lần tắm đầu tiên.',
     benefits: [
-      'Làm sạch tế bào chết toàn thân mà không gây xước hay rát da',
-      'Cải thiện tình trạng viêm nang lông và da không đều màu',
-      'Bơ cacao cấp ẩm sâu, không để lại cảm giác nhờn dính sau khi tắm',
-      'Hương thơm cà phê rang xay nguyên bản tạo cảm giác thư giãn tuyệt đối'
+      'Làm sạch tế bào chết toàn thân mà không làm trầy xước biểu bì',
+      'Cải thiện tình trạng thâm sạm vùng khuỷu tay, đầu gối và viêm nang lông',
+      'Bơ ca cao Tiền Giang cấp ẩm sâu, không để lại cảm giác nhờn rít',
+      'Mùi hương cà phê rang xay thơm nồng ấm kích thích cảm xúc sảng khoái'
     ],
     mainIngredients: [
-      'Cà phê Đắk Lắk: Giàu chất chống oxy hóa và caffeine làm săn chắc da',
-      'Bơ ca cao Tiền Giang: Giàu chất béo lành mạnh, dưỡng ẩm mượt mà',
-      'Dầu đậu nành tự nhiên: Bảo vệ hàng rào lipid cho da'
+      'Hạt cà phê Robusta Đắk Lắk: Giàu caffeine và chất chống oxy hóa giúp săn chắc da',
+      'Bơ ca cao Tiền Giang thô: Chứa 50-60% axit béo dưỡng ẩm chuyên sâu',
+      'Dầu đậu nành & Tocopherol (Vitamin E): Củng cố màng lipid tự nhiên của da'
     ],
-    usage: 'Thoa một lượng sản phẩm lên da ướt. Mát-xa nhẹ nhàng từ cổ đến chân, sau đó tắm sạch lại với nước. Dùng 2–3 lần một tuần để đạt hiệu quả tốt nhất.',
+    usage: 'Thoa một lượng vừa đủ lên da ướt. Mát-xa nhẹ nhàng từ cổ đến chân trong 5-10 phút rồi tắm sạch lại bằng nước ấm. Sử dụng 2-3 lần/tuần.',
     rating: 4.9,
     reviewCount: 5120,
-    badge: 'Được yêu thích nhất',
-    texture: 'Hạt cà phê xay mịn quyện trong kem bơ nâu ấm',
-    colorHex: '#4C3B2C'
+    badge: 'Bán chạy nhất',
+    texture: 'Hạt cà phê nguyên chất xay nhuyễn hòa quyện trong kem bơ mịn mượt',
+    colorHex: '#4C3B2C',
+    visualType: 'coffee-body',
+    imageUrl: '/assets/aistudio/images__4__b2a0833b.jfif'
   },
   {
     id: 'nuoc-duong-toc-tinh-dau-buoi',
-    name: 'Nước dưỡng tóc tinh dầu bưởi',
-    vietnameseName: 'Nước dưỡng tóc tinh dầu bưởi Cocoon',
+    name: 'Nước dưỡng tóc tinh dầu bưởi Cocoon',
+    vietnameseName: 'Nước dưỡng tóc tinh dầu bưởi',
     subtitle: 'Pomelo Hair Tonic',
     category: 'haircare',
     categoryLabel: 'Chăm sóc tóc',
     capacity: '140ml',
-    capacities: ['140ml', '310ml Refill'],
+    capacities: ['140ml'],
     price: 165000,
-    originalPrice: 175000,
+    originalPrice: 185000,
     ingredientKey: 'Bưởi',
-    ingredientRegion: 'Việt Nam',
-    description: 'Sự kết hợp giữa tinh dầu vỏ bưởi truyền thống Việt Nam cùng hoạt chất Xylishine và Vitamin B5 (Panthenol) giúp nuôi dưỡng nang tóc từ sâu bên trong, hạn chế gãy rụng và nuôi dưỡng mái tóc suôn mượt.',
+    ingredientRegion: 'Vườn bưởi truyền thống Việt Nam',
+    description: 'Sự kết hợp giữa tinh dầu vỏ bưởi truyền thống Việt Nam nguyên chất với hoạt chất dưỡng tóc hiện đại Xylishine™ và Vitamin B5 (Panthenol) nuôi dưỡng nang tóc chắc khỏe từ gốc, hỗ trợ giảm rụng tóc và cải thiện độ dày mượt tự nhiên.',
     benefits: [
-      'Giảm gãy rụng và hỗ trợ nuôi dưỡng sợi tóc dày khỏe',
-      'Cung cấp dưỡng chất thiết yếu cho da đầu và chân tóc',
-      'Kết cấu 2 pha dầu - nước mỏng nhẹ, không gây bết dính chân tóc',
-      'Mùi hương vỏ bưởi thanh khiết, giải tỏa căng thẳng'
+      'Cung cấp dưỡng chất thiết yếu nuôi dưỡng nang tóc khỏe mạnh',
+      'Hỗ trợ giảm đáng kể tình trạng gãy rụng và kích thích mọc tóc con',
+      'Kết cấu 2 pha dầu - nước siêu nhẹ, thẩm thấu nhanh, hoàn toàn không gây bết dính',
+      'Hương thơm tinh dầu bưởi tươi thanh khiết, thư giãn tinh thần sau ngày dài'
     ],
     mainIngredients: [
-      'Tinh dầu vỏ bưởi nguyên chất: Giàu limonene giúp kháng khuẩn và kích thích nang tóc',
-      'Xylishine (từ tảo nâu tự nhiên): Tăng cường độ bóng mượt và độ ẩm cho sợi tóc',
+      'Tinh dầu vỏ bưởi nguyên chất (Citrus Grandis Peel Oil): Chứa hàm lượng cao Limonene kháng khuẩn và kích thích tuần hoàn chân tóc',
+      'Xylishine™ (chiết xuất từ tảo nâu tự nhiên): Tăng cường độ bóng mượt và độ dày sợi tóc',
       'Vitamin B5 (Panthenol): Phục hồi cấu trúc hư tổn của thân tóc'
     ],
-    usage: 'Lắc đều chai trước khi dùng để hòa tan 2 pha nước và dầu. Xịt trực tiếp lên chân tóc và thân tóc khi tóc sạch, mát-xa nhẹ nhàng 2-3 phút.',
+    usage: 'Lắc đều chai trước khi dùng để 2 pha dầu và nước hòa vào nhau. Xịt trực tiếp lên da đầu và chân tóc khi tóc sạch và khô ráo, dùng đầu ngón tay mát-xa nhẹ 2-3 phút.',
     rating: 4.8,
     reviewCount: 4210,
-    badge: 'Chăm sóc tóc bán chạy',
-    texture: 'Dạng xịt sương 2 pha thẩm thấu tức thì không nhờn rít',
-    colorHex: '#526A3A'
+    badge: 'Giảm gãy rụng tóc',
+    texture: 'Xịt phun sương mịn màng 2 pha thẩm thấu tức thì, không gây bóng dầu',
+    colorHex: '#526A3A',
+    visualType: 'pomelo-hair',
+    imageUrl: '/assets/aistudio/images__3__a1126cce.jfif'
   },
   {
-    id: 'mat-na-nghe-hung-yen',
-    name: 'Mặt nạ nghệ Hưng Yên',
-    vietnameseName: 'Mặt nạ nghệ Hưng Yên Cocoon',
-    subtitle: 'Hung Yen Turmeric Mask',
-    category: 'skincare',
-    categoryLabel: 'Chăm sóc da',
-    capacity: '100ml',
-    capacities: ['30ml', '100ml'],
-    price: 345000,
-    originalPrice: 375000,
-    ingredientKey: 'Nghệ Hưng Yên',
-    ingredientRegion: 'Hưng Yên',
-    description: 'Mặt nạ chiết xuất từ tinh bột nghệ Hưng Yên dồi dào curcumin kết hợp chiết xuất yến mạch và vitamin B3 (Niacinamide), giúp cải thiện bề mặt da xỉn màu, mờ thâm mụn mà hoàn toàn không để lại vệt vàng sau khi rửa.',
+    id: 'dau-xa-buoi-pomelo-hair-conditioner',
+    name: 'Dầu xả bưởi Cocoon giảm gãy rụng & mềm tóc',
+    vietnameseName: 'Dầu xả bưởi Cocoon',
+    subtitle: 'Pomelo Hair Conditioner',
+    category: 'haircare',
+    categoryLabel: 'Chăm sóc tóc',
+    capacity: '50ml',
+    capacities: ['50ml', '310ml'],
+    price: 65000,
+    originalPrice: 75000,
+    ingredientKey: 'Bưởi',
+    ingredientRegion: 'Việt Nam',
+    description: 'Chiết xuất từ tinh dầu vỏ bưởi Việt Nam kết hợp Vitamin B5, Xylishine™ và các axit amin thiết yếu giúp nuôi dưỡng sợi tóc suôn mượt, giảm thiểu xơ rối chẻ ngọn và tăng cường độ đàn hồi tự nhiên.',
     benefits: [
-      'Cải thiện sắc tố da, làm mờ vết thâm sau mụn rõ rệt',
-      'Bổ sung độ ẩm và chất chống oxy hóa tự nhiên cho làn da rạng rỡ',
-      'Làm dịu làn da mệt mỏi do tác động môi trường khói bụi',
-      'Dễ dàng rửa sạch bằng nước ấm, không gây ố vàng trên da'
+      'Làm mềm mượt sợi tóc ngay sau khi xả, không gây nặng bết chân tóc',
+      'Bổ sung axit amin phục hồi các hư tổn bề mặt thân tóc',
+      'Hương thơm thanh mát sảng khoái từ vỏ bưởi thiên nhiên'
     ],
     mainIngredients: [
-      'Tinh bột nghệ Hưng Yên: Hàm lượng curcumin cao gấp 3 lần nghệ thông thường',
-      'Chiết xuất yến mạch: Giảm kích ứng và nuôi dưỡng tế bào da',
-      'Vitamin B3 (Niacinamide 4%): Làm sáng da đều màu và củng cố hàng rào lipid'
+      'Tinh dầu vỏ bưởi Việt Nam tự nhiên',
+      'Xylishine™ và Panthenol (Vitamin B5)',
+      'Hợp chất axit amin thực vật'
     ],
-    usage: 'Thoa đều một lượng vừa đủ lên da mặt đã làm sạch, tránh vùng mắt. Để yên trong 20 phút rồi rửa sạch nhẹ nhàng bằng nước ấm.',
+    usage: 'Sau khi gội đầu, thoa đều một lượng vừa đủ lên thân và ngọn tóc ướt, ủ nhẹ trong 2-3 phút rồi xả sạch với nước.',
     rating: 4.8,
-    reviewCount: 2980,
-    badge: 'Làm sáng da tự nhiên',
-    texture: 'Kem mịn màu vàng nghệ óng ả, êm dịu trên da',
-    colorHex: '#9B7322'
+    reviewCount: 1850,
+    badge: 'Mềm mượt tự nhiên',
+    texture: 'Kem xả xanh lá thanh mát mượt mà trên từng lọn tóc',
+    colorHex: '#2E5536',
+    visualType: 'pomelo-hair',
+    imageUrl: '/assets/aistudio/images__2__b4823141.jfif'
   },
   {
-    id: 'tay-te-bao-chet-moi-ca-phe',
-    name: 'Tẩy tế bào chết môi cà phê Đắk Lắk',
-    vietnameseName: 'Tẩy tế bào chết môi cà phê Đắk Lắk Cocoon',
-    subtitle: 'Dak Lak Coffee Lip Scrub',
+    id: 'nuoc-sen-hau-giang-soothing-toner',
+    name: 'Nước sen Hậu Giang làm dịu & cấp ẩm Cocoon',
+    vietnameseName: 'Nước sen Hậu Giang Soothing Toner',
+    subtitle: 'Hau Giang Lotus Soothing Toner',
+    category: 'skincare',
+    categoryLabel: 'Chăm sóc da',
+    capacity: '140ml',
+    capacities: ['140ml', '310ml'],
+    price: 195000,
+    originalPrice: 225000,
+    ingredientKey: 'Sen Hậu Giang',
+    ingredientRegion: 'Hậu Giang, Đồng bằng sông Cửu Long',
+    description: 'Nước sen Hậu Giang dịu mát kết hợp Madecassoside, Vitamin B5, Vitamin B12 và phức hợp Beta-Glucan & Sweetone® giúp bảo vệ hàng rào độ ẩm, làm dịu tức thì làn da đỏ rát, kích ứng và rất nhạy cảm.',
+    benefits: [
+      'Làm dịu làn da kích ứng, ửng đỏ và nhạy cảm ngay tức thì',
+      'Củng cố hàng rào bảo vệ sinh học tự nhiên của làn da',
+      'Cấp ẩm thanh mát mà không chứa cồn, không gây châm chích'
+    ],
+    mainIngredients: [
+      'Chiết xuất hoa sen Hậu Giang dồi dào chất chống oxy hóa tự nhiên',
+      'Madecassoside (từ rau má), Vitamin B5 và Vitamin B12',
+      'Beta-Glucan & Sweetone® củng cố đề kháng da'
+    ],
+    usage: 'Sau khi rửa mặt, lấy một lượng vừa đủ vỗ nhẹ lên khắp mặt và cổ để dưỡng chất thẩm thấu sâu.',
+    rating: 4.9,
+    reviewCount: 2340,
+    badge: 'Cho da rất nhạy cảm',
+    texture: 'Nước hoa sen sắc hồng ngọc trong trẻo thẩm thấu tức thì',
+    colorHex: '#C57E6B',
+    visualType: 'sen-cleanser',
+    imageUrl: '/assets/aistudio/images__1__9bbf7365.jfif'
+  },
+  {
+    id: 'son-duong-dau-dua-ben-tre',
+    name: 'Son dưỡng dầu dừa Bến Tre Cocoon',
+    vietnameseName: 'Son dưỡng dầu dừa Bến Tre',
+    subtitle: 'Ben Tre Coconut Lip Balm',
     category: 'lipcare',
     categoryLabel: 'Dưỡng môi',
     capacity: '5g',
     capacities: ['5g'],
-    price: 75000,
-    ingredientKey: 'Cà phê Đắk Lắk',
-    ingredientRegion: 'Đắk Lắk',
-    description: 'Hạt cà phê Đắk Lắk xay siêu nhuyễn quyện cùng bơ hạt mỡ và dầu mắc-ca giúp nhẹ nhàng loại bỏ lớp vảy sừng khô tróc trên môi, trả lại đôi môi hồng hào mềm mại.',
+    price: 32000,
+    originalPrice: 40000,
+    ingredientKey: 'Dầu dừa Bến Tre',
+    ingredientRegion: 'Bến Tre, Đồng bằng sông Cửu Long',
+    description: 'Sự hòa quyện giữa dầu dừa Bến Tre nguyên chất, bơ hạt mỡ và vitamin E dồi dào chất béo thực vật lành tính giúp cung cấp độ ẩm tức thì, chữa lành đôi môi khô nứt nẻ và giữ cho môi luôn hồng hào, mềm mịn tự nhiên.',
     benefits: [
-      'Làm mềm và loại bỏ da chết trên môi nhẹ nhàng',
-      'Giữ ẩm tự nhiên, giúp son môi lên màu chuẩn và mịn màng hơn',
-      'Không chứa vi hạt nhựa (microbeads), 100% hạt thực vật tự nhiên'
+      'Cung cấp độ ẩm dồi dào và duy trì làn môi mềm mịn cả ngày dài',
+      'Hỗ trợ làm lành các vết nứt nẻ bong tróc do thời tiết hanh khô',
+      'Tạo lớp lót bảo vệ môi hoàn hảo trước khi thoa son màu',
+      '100% thành phần thực vật tự nhiên, an toàn tuyệt đối khi sử dụng'
     ],
     mainIngredients: [
-      'Hạt cà phê Đắk Lắk siêu mịn',
-      'Bơ hạt mỡ hữu cơ',
-      'Dầu hạt mắc-ca giàu omega 7 dưỡng ẩm'
+      'Dầu dừa Bến Tre nguyên chất: Giàu acid lauric dưỡng ẩm sâu',
+      'Bơ hạt mỡ (Shea Butter): Giàu vitamin A và E bảo vệ da môi',
+      'Tocopherol (Vitamin E tự nhiên)'
     ],
-    usage: 'Lấy một lượng nhỏ thoa lên môi khô, mát-xa nhẹ theo hình xoắn ốc trong 30 giây rồi dùng khăn ướt hoặc nước ấm lau sạch.',
+    usage: 'Thoa trực tiếp lên môi bất cứ khi nào cảm thấy môi khô hoặc làm lớp dưỡng lót trước khi dùng son màu.',
     rating: 4.9,
-    reviewCount: 1890,
-    texture: 'Sáp hạt mịn thoảng hương cà phê thơm ngọt',
-    colorHex: '#644A32'
-  },
-  {
-    id: 'gel-rua-mat-hoa-sen-hau-giang',
-    name: 'Gel rửa mặt hoa sen Hậu Giang',
-    vietnameseName: 'Gel rửa mặt hoa sen Hậu Giang Cocoon',
-    subtitle: 'Hau Giang Lotus Cleanser',
-    category: 'skincare',
-    categoryLabel: 'Chăm sóc da',
-    capacity: '140ml',
-    capacities: ['140ml', '310ml Refill'],
-    price: 175000,
-    ingredientKey: 'Sen Hậu Giang',
-    ingredientRegion: 'Hậu Giang, ĐBSCL',
-    description: 'Chiết xuất từ hoa sen Hậu Giang cùng hợp chất làm sạch có nguồn gốc từ axit amin thực vật, giúp làm sạch sâu lỗ chân lông nhẹ nhàng mà vẫn giữ trọn màng ẩm sinh học.',
-    benefits: [
-      'Làm sạch dịu nhẹ không xà phòng (soap-free)',
-      'Làm dịu làn da nhạy cảm và bảo vệ lớp màng bảo vệ da',
-      'Cân bằng độ ẩm tự nhiên, da ẩm mượt sau khi rửa'
-    ],
-    mainIngredients: [
-      'Chiết xuất hoa sen Hậu Giang giàu polyphenol chống oxy hóa',
-      'Amino acid surfactants nguồn gốc dừa',
-      'Chiết xuất hoa cúc xu xi làm dịu vết ửng đỏ'
-    ],
-    usage: 'Lấy lượng gel vừa đủ ra lòng bàn tay ướt, tạo bọt nhẹ và mát-xa đều lên mặt, sau đó rửa sạch với nước.',
-    rating: 4.8,
-    reviewCount: 1640,
-    badge: 'Dành cho da nhạy cảm',
-    texture: 'Gel trong suốt tạo bọt bông mịn màng',
-    colorHex: '#4A6D58'
-  },
-  {
-    id: 'tui-refill-nuoc-tay-trang-bi-dao',
-    name: 'Túi Refill Nước tẩy trang bí đao 500ml',
-    vietnameseName: 'Túi nạp lại nước tẩy trang bí đao',
-    subtitle: 'Winter Melon Micellar Water Refill Pouch',
-    category: 'refill',
-    categoryLabel: 'Túi refill',
-    capacity: '500ml',
-    capacities: ['500ml'],
-    price: 245000,
-    originalPrice: 295000,
-    ingredientKey: 'Bí đao',
-    ingredientRegion: 'Việt Nam',
-    description: 'Giải pháp nạp lại thông minh và tiết kiệm cho môi trường. Thiết kế túi vòi tiện lợi giúp bạn dễ dàng đổ đầy lại chai nước tẩy trang bí đao 500ml hiện có tại nhà.',
-    benefits: [
-      'Tiết kiệm đến 80% lượng rác thải nhựa so với việc mua chai mới',
-      'Tiết kiệm 50.000đ trực tiếp vào giá thành sản phẩm',
-      'Vòi rót kín chuẩn xác, thao tác nạp lại dễ dàng không đổ tràn'
-    ],
-    mainIngredients: [
-      'Chiết xuất bí đao tự nhiên',
-      'Rau má và tinh dầu tràm trà cân bằng da'
-    ],
-    usage: 'Mở nắp túi vòi và rót trực tiếp vào chai nước tẩy trang bí đao 500ml rỗng đã được vệ sinh sạch và để khô ráo.',
-    rating: 4.9,
-    reviewCount: 2150,
-    badge: 'Tiết kiệm & Thân thiện',
-    isRefill: true,
-    texture: 'Nước tẩy trang dịu mát đựng trong túi nhôm sinh học',
-    colorHex: '#2E583F'
-  },
-  {
-    id: 'combo-cham-soc-da-dau-mun',
-    name: 'Combo chăm sóc da dầu mụn Bí đao',
-    vietnameseName: 'Bộ 3 Bí đao chăm sóc toàn diện',
-    subtitle: 'Winter Melon Purifying Routine Set',
-    category: 'combo',
-    categoryLabel: 'Combo / Travel Kit',
-    capacity: 'Bộ 3 sản phẩm',
-    capacities: ['Full size bộ 3'],
-    price: 615000,
-    originalPrice: 720000,
-    ingredientKey: 'Bí đao',
-    ingredientRegion: 'Việt Nam',
-    description: 'Bộ sản phẩm gồm: Nước tẩy trang bí đao 500ml, Gel rửa mặt bí đao 140ml và Tinh chất bí đao 7% Niacinamide 30ml tạo nên chu trình 3 bước thanh lọc làn da dầu mụn hiệu quả.',
-    benefits: [
-      'Chu trình khép kín: Làm sạch - Thanh lọc - Phục hồi',
-      'Kiểm soát bóng nhờn suốt ngày dài',
-      'Tiết kiệm hơn 15% khi mua theo bộ'
-    ],
-    mainIngredients: [
-      'Bí đao Việt Nam, Niacinamide 7%, Tràm trà, Rau má'
-    ],
-    usage: 'Sử dụng theo thứ tự: Nước tẩy trang -> Gel rửa mặt -> Tinh chất bí đao vào mỗi sáng và tối.',
-    rating: 4.9,
-    reviewCount: 3100,
-    badge: 'Combo bán chạy',
-    texture: 'Trọn bộ chu trình chăm sóc chuẩn da liễu',
-    colorHex: '#254B36'
+    reviewCount: 6320,
+    badge: 'Giá tốt nhất - 32.000đ',
+    texture: 'Chất sáp mướt mịn thoảng hương dừa thơm ngọt tự nhiên',
+    colorHex: '#254B36',
+    visualType: 'coconut-lip',
+    imageUrl: '/assets/aistudio/image_b3865649.png'
   }
 ];
 
 export const INGREDIENTS_DATA: Ingredient[] = [
-  {
-    id: 'bi-dao',
-    name: 'Bí đao',
-    scientificName: 'Benincasa Cerifera',
-    region: 'Đồng bằng sông Hồng & Nam Bộ',
-    regionDetail: 'Được thu hoạch từ những vườn nông sản chuẩn sạch tại Việt Nam',
-    highlight: 'Nguyên liệu gắn với các sản phẩm chăm sóc da theo nhu cầu làm sạch và cân bằng dầu.',
-    description: 'Trong y học cổ truyền Việt Nam, bí đao có tính hàn, vị ngọt thanh, có tác dụng thanh nhiệt làm mát. Khi ứng dụng vào mỹ phẩm, dịch chiết bí đao dồi dào axit amin, vitamin và chất chống oxy hóa tự nhiên giúp làm dịu nốt mụn sưng đỏ, làm sạch bã nhờn và phục hồi sự cân bằng tự nhiên cho da.',
-    benefits: [
-      'Kháng viêm và làm mát dịu bề mặt da',
-      'Điều tiết lượng dầu thừa và ngăn ngừa mụn mới',
-      'Làm thông thoáng lỗ chân lông bị bít tắc'
-    ],
-    associatedProducts: [
-      'Nước tẩy trang bí đao 500ml',
-      'Gel rửa mặt bí đao 140ml',
-      'Tinh chất bí đao giảm dầu & mụn'
-    ],
-    color: '#345E44',
-    iconType: 'melon'
-  },
   {
     id: 'ca-phe-dak-lak',
     name: 'Cà phê Đắk Lắk',
@@ -341,33 +231,10 @@ export const INGREDIENTS_DATA: Ingredient[] = [
       'Mùi hương cà phê nồng nàn đem lại năng lượng tích cực'
     ],
     associatedProducts: [
-      'Cà phê Đắk Lắk làm sạch da chết cơ thể',
-      'Tẩy tế bào chết môi cà phê Đắk Lắk',
-      'Sữa tắm cà phê Đắk Lắk'
+      'Cà phê Đắk Lắk làm sạch da chết cơ thể (200ml)'
     ],
     color: '#5A4331',
     iconType: 'coffee'
-  },
-  {
-    id: 'nghe-hung-yen',
-    name: 'Nghệ Hưng Yên',
-    scientificName: 'Curcuma Longa (Hung Yen)',
-    region: 'Chí Tân, Khoái Châu, Hưng Yên',
-    regionDetail: 'Vùng đất phù sa sông Hồng tạo nên củ nghệ có hàm lượng curcumin vượt trội',
-    highlight: 'Nguyên liệu quen thuộc được đưa vào sản phẩm chăm sóc da.',
-    description: 'Nghệ là bài thuốc dân gian quen thuộc của người Việt từ ngàn xưa. Cocoon chọn nghệ trồng tại vùng Chí Tân (Hưng Yên) nổi danh nhờ lớp đất phù sa màu mỡ giúp củ nghệ tích tụ hàm lượng Curcuminoid cao gấp 3 lần bình thường. Công nghệ chiết tách hiện đại giữ trọn hoạt chất chống oxy hóa, làm mờ thâm mụn mà dễ dàng rửa sạch không để lại sắc vàng ố trên da.',
-    benefits: [
-      'Chống oxy hóa mạnh mẽ, ngăn ngừa lão hóa sớm',
-      'Làm mờ vết thâm sạm và làm đều màu da',
-      'Kháng viêm và củng cố hàng rào bảo vệ da'
-    ],
-    associatedProducts: [
-      'Mặt nạ nghệ Hưng Yên',
-      'Tinh chất nghệ Hưng Yên 22% Vitamin C',
-      'Nước hoa hồng nghệ Hưng Yên'
-    ],
-    color: '#9C6E18',
-    iconType: 'turmeric'
   },
   {
     id: 'buoi',
@@ -383,9 +250,8 @@ export const INGREDIENTS_DATA: Ingredient[] = [
       'Mùi hương tươi mát tự nhiên giúp sảng khoái tinh thần'
     ],
     associatedProducts: [
-      'Nước dưỡng tóc tinh dầu bưởi',
-      'Dầu gội bưởi không sulfate',
-      'Dầu xả bưởi phục hồi tóc hư tổn'
+      'Nước dưỡng tóc tinh dầu bưởi Cocoon 140ml',
+      'Dầu xả bưởi Cocoon giảm gãy rụng 50ml'
     ],
     color: '#4B6E32',
     iconType: 'pomelo'
@@ -404,12 +270,29 @@ export const INGREDIENTS_DATA: Ingredient[] = [
       'Bảo vệ da trước tác nhân gây hại từ môi trường'
     ],
     associatedProducts: [
-      'Gel rửa mặt hoa sen Hậu Giang',
-      'Nước hoa hồng hoa sen Hậu Giang',
-      'Kem dưỡng ẩm làm dịu hoa sen'
+      'Nước sen Hậu Giang làm dịu & cấp ẩm Cocoon 140ml'
     ],
-    color: '#385F49',
+    color: '#C57E6B',
     iconType: 'lotus'
+  },
+  {
+    id: 'dau-dua-ben-tre',
+    name: 'Dừa Bến Tre',
+    scientificName: 'Cocos Nucifera (Ben Tre)',
+    region: 'Bến Tre, Đồng bằng sông Cửu Long',
+    regionDetail: 'Xứ sở dừa bạt ngàn với những cây dừa trĩu quả tích tụ axit béo tự nhiên',
+    highlight: 'Dưỡng chất thực vật thuần khiết cho làn môi căng mọng.',
+    description: 'Dầu dừa nguyên chất ép từ cơm dừa già Bến Tre chứa hàm lượng axit béo phong phú, đặc biệt là axit lauric giúp thẩm thấu nhanh và tạo màng ẩm tự nhiên bảo vệ môi trước sự khô nẻ.',
+    benefits: [
+      'Cung cấp độ ẩm dồi dào cho môi',
+      'Làm mềm và chống nứt nẻ môi',
+      'An toàn thuần chay 100%'
+    ],
+    associatedProducts: [
+      'Son dưỡng dầu dừa Bến Tre Cocoon 5g'
+    ],
+    color: '#254B36',
+    iconType: 'melon'
   }
 ];
 
@@ -442,68 +325,6 @@ export const CERTIFICATIONS_DATA: Certification[] = [
 
 export const ROUTINE_NEEDS_DATA: RoutineNeed[] = [
   {
-    id: 'cleansing',
-    title: 'Da cần làm sạch & thanh lọc',
-    tagline: 'Loại bỏ dầu thừa, cặn trang điểm và bụi bẩn cho lỗ chân lông thông thoáng',
-    description: 'Lựa chọn tối ưu cho làn da dầu nhờn, có mụn hoặc thường xuyên tiếp xúc với khói bụi đô thị.',
-    idealFor: 'Da dầu, da mụn, da hỗn hợp thiên dầu',
-    recommendedProductId: 'nuoc-tay-trang-bi-dao',
-    steps: [
-      {
-        stepNumber: 1,
-        stepName: 'Tẩy trang dịu nhẹ',
-        productName: 'Nước tẩy trang bí đao 500ml',
-        action: 'Thấm bông lau sạch bụi bẩn và dầu thừa',
-        capacity: '500ml'
-      },
-      {
-        stepNumber: 2,
-        stepName: 'Rửa mặt tạo bọt',
-        productName: 'Gel rửa mặt bí đao',
-        action: 'Mát-xa 60 giây rửa sạch với nước mát',
-        capacity: '140ml'
-      },
-      {
-        stepNumber: 3,
-        stepName: 'Cân bằng & làm dịu',
-        productName: 'Nước bí đao cân bằng da',
-        action: 'Vỗ nhẹ để da hấp thụ dưỡng chất thảo mộc',
-        capacity: '140ml'
-      }
-    ]
-  },
-  {
-    id: 'hydrating',
-    title: 'Da cần dưỡng ẩm & phục hồi',
-    tagline: 'Cấp nước sâu và làm dịu làn da khô ráp, nhạy cảm mẩn đỏ',
-    description: 'Phù hợp cho làn da thiếu ẩm, hàng rào bảo vệ suy yếu cần được làm dịu và phục hồi tự nhiên.',
-    idealFor: 'Da khô, da thiếu nước, da nhạy cảm',
-    recommendedProductId: 'gel-rua-mat-hoa-sen-hau-giang',
-    steps: [
-      {
-        stepNumber: 1,
-        stepName: 'Làm sạch êm dịu',
-        productName: 'Gel rửa mặt hoa sen Hậu Giang',
-        action: 'Làm sạch không xà phòng, bảo vệ màng ẩm',
-        capacity: '140ml'
-      },
-      {
-        stepNumber: 2,
-        stepName: 'Dưỡng chất phục hồi',
-        productName: 'Tinh chất hoa sen Hậu Giang',
-        action: 'Cấp ẩm và củng cố hàng rào lipid cho da',
-        capacity: '30ml'
-      },
-      {
-        stepNumber: 3,
-        stepName: 'Khóa ẩm bảo vệ',
-        productName: 'Thạch bí đao dưỡng ẩm',
-        action: 'Khóa chặt độ ẩm suốt 24 giờ liên tục',
-        capacity: '30ml'
-      }
-    ]
-  },
-  {
     id: 'bodycare',
     title: 'Chăm sóc cơ thể mịn màng',
     tagline: 'Làm sạch sâu và lấy đi tế bào chết cơ thể với cà phê Đắk Lắk',
@@ -513,24 +334,24 @@ export const ROUTINE_NEEDS_DATA: RoutineNeed[] = [
     steps: [
       {
         stepNumber: 1,
-        stepName: 'Tắm sạch hằng ngày',
-        productName: 'Sữa tắm cà phê Đắk Lắk',
-        action: 'Làm sạch mồ hôi và bụi bẩn với bọt mịn',
-        capacity: '500ml'
+        stepName: 'Tắm sạch cơ thể',
+        productName: 'Tắm nước ấm làm mềm da',
+        action: 'Chuẩn bị bề mặt da ẩm sẵn sàng',
+        capacity: 'Thường quy'
       },
       {
         stepNumber: 2,
         stepName: 'Tẩy tế bào chết định kỳ',
-        productName: 'Cà phê Đắk Lắk làm sạch da chết',
-        action: 'Mát-xa 2-3 lần/tuần cho làn da mịn mượt',
+        productName: 'Cà phê Đắk Lắk làm sạch da chết cơ thể',
+        action: 'Mát-xa 2-3 lần/tuần trong 10 phút cho da trơn mịn',
         capacity: '200ml'
       },
       {
         stepNumber: 3,
-        stepName: 'Dưỡng thể mềm mại',
-        productName: 'Bơ dưỡng thể cà phê Đắk Lắk',
-        action: 'Cấp ẩm sâu và khóa dưỡng chất trên bề mặt da',
-        capacity: '200ml'
+        stepName: 'Dưỡng ẩm môi',
+        productName: 'Son dưỡng dầu dừa Bến Tre',
+        action: 'Khóa ẩm cho đôi môi mềm mại',
+        capacity: '5g'
       }
     ]
   },
@@ -538,30 +359,61 @@ export const ROUTINE_NEEDS_DATA: RoutineNeed[] = [
     id: 'haircare',
     title: 'Chăm sóc tóc & giảm gãy rụng',
     tagline: 'Nuôi dưỡng nang tóc và kích thích mọc tóc với tinh dầu bưởi Việt Nam',
-    description: 'Giải pháp cho mái tóc mỏng yếu, dễ gãy rụng và da đầu dễ bị bết dính.',
+    description: 'Giải pháp cho mái tóc mỏng yếu, dễ gãy rụng và khô xơ.',
     idealFor: 'Tóc thưa rụng, tóc qua xử lý nhiệt và hóa chất',
     recommendedProductId: 'nuoc-duong-toc-tinh-dau-buoi',
     steps: [
       {
         stepNumber: 1,
-        stepName: 'Gội sạch dịu nhẹ',
-        productName: 'Dầu gội bưởi không sulfate',
-        action: 'Làm sạch chân tóc mà không làm khô ngọn',
-        capacity: '310ml'
+        stepName: 'Xả tóc mềm mượt',
+        productName: 'Dầu xả bưởi Cocoon',
+        action: 'Ủ thân tóc 3 phút rồi xả sạch',
+        capacity: '50ml'
       },
       {
         stepNumber: 2,
-        stepName: 'Xả tóc mượt mà',
-        productName: 'Dầu xả bưởi phục hồi tóc',
-        action: 'Ủ thân tóc 3 phút rồi xả sạch',
-        capacity: '310ml'
+        stepName: 'Sấy khô chân tóc',
+        productName: 'Lau khô và sấy chế độ mát',
+        action: 'Giữ chân tóc thông thoáng',
+        capacity: 'Thường quy'
       },
       {
         stepNumber: 3,
         stepName: 'Xịt dưỡng nang tóc',
-        productName: 'Nước dưỡng tóc tinh dầu bưởi',
-        action: 'Xịt sát da đầu mỗi ngày và mát-xa nhẹ',
+        productName: 'Nước dưỡng tóc tinh dầu bưởi Cocoon',
+        action: 'Xịt sát chân tóc mỗi ngày và mát-xa nhẹ',
         capacity: '140ml'
+      }
+    ]
+  },
+  {
+    id: 'hydrating',
+    title: 'Cấp ẩm dịu nhẹ cho da nhạy cảm',
+    tagline: 'Làm dịu làn da mẩn đỏ với Nước sen Hậu Giang',
+    description: 'Dành cho làn da nhạy cảm, dễ kích ứng cần làm dịu và phục hồi màng ẩm.',
+    idealFor: 'Da rất nhạy cảm, da thiếu ẩm',
+    recommendedProductId: 'nuoc-sen-hau-giang-soothing-toner',
+    steps: [
+      {
+        stepNumber: 1,
+        stepName: 'Rửa mặt sạch',
+        productName: 'Làm sạch mặt với nước mát',
+        action: 'Lấy đi bụi bẩn bề mặt',
+        capacity: 'Thường quy'
+      },
+      {
+        stepNumber: 2,
+        stepName: 'Làm dịu & Cấp ẩm',
+        productName: 'Nước sen Hậu Giang Soothing Toner',
+        action: 'Vỗ nhẹ để dưỡng chất hoa sen và Madecassoside thẩm thấu',
+        capacity: '140ml'
+      },
+      {
+        stepNumber: 3,
+        stepName: 'Dưỡng môi',
+        productName: 'Son dưỡng dầu dừa Bến Tre',
+        action: 'Thoa đều bảo vệ đôi môi suốt cả ngày',
+        capacity: '5g'
       }
     ]
   }
@@ -569,67 +421,60 @@ export const ROUTINE_NEEDS_DATA: RoutineNeed[] = [
 
 export const SUSTAINABILITY_INITIATIVES = [
   {
-    id: 'refill-initiative',
-    badge: 'Giảm 80% rác thải',
-    title: 'Túi Refill Tiết Kiệm Bao Bì',
-    tagline: 'Tái sử dụng chai cũ – Chung tay giảm rác thải nhựa',
-    content: 'Cocoon cung cấp phiên bản túi refill dung tích lớn cho các sản phẩm thiết yếu như Nước tẩy trang bí đao 500ml, Dầu gội bưởi, Sữa tắm cà phê. Sử dụng túi refill giúp giảm tới 80% lượng nhựa so với việc sản xuất chai mới, đồng thời giúp bạn tiết kiệm chi phí mua sắm thông minh.'
-  },
-  {
     id: 'bottle-recycle',
     badge: 'Đổi vỏ chai cũ',
     title: 'Thu Hồi Vỏ Chai Cũ Nhận Sản Phẩm',
     tagline: 'Mỗi vỏ chai gửi lại là một cam kết cho hành tinh xanh',
-    content: 'Chương trình thu hồi vỏ chai rỗng Cocoon đã làm sạch được diễn ra thường niên tại hơn 80 điểm thu gom tại TP. Hồ Chí Minh, Hà Nội, Đà Nẵng và các chuỗi đối tác phân phối. Khách hàng gửi lại từ 5 vỏ chai rỗng sẽ nhận được các sản phẩm hoặc quà tặng trải nghiệm thuần chay.'
+    content: 'Chương trình thu hồi vỏ chai rỗng Cocoon đã làm sạch được diễn ra thường niên tại hơn 80 điểm thu gom tại TP. Hồ Chí Minh, Hà Nội, Đà Nẵng và các chuỗi đối tác phân phối (Hasaki, Guardian, Watsons). Khách hàng gửi lại từ 5 vỏ chai rỗng sẽ nhận ngay Son dưỡng dầu dừa hoặc sản phẩm trải nghiệm thuần chay.'
   },
   {
     id: 'community-action',
     badge: 'Trách nhiệm xã hội',
     title: 'Bảo Tồn Động Vật & Trồng Rừng Bản Địa',
     tagline: 'Tôn trọng sự sống và thiên nhiên của dải đất Việt Nam',
-    content: 'Cocoon trích một phần doanh thu phối hợp cùng Tổ chức Động vật Châu Á (AAF) triển khai dự án cải thiện phúc lợi cho đàn voi nhà tại Đắk Lắk và cứu trợ gấu ngựa. Đồng thời, Cocoon đồng hành cùng các trung tâm bảo tồn thiên nhiên phủ xanh rừng đầu nguồn tại Việt Nam.'
+    content: 'Cocoon trích một phần doanh thu phối hợp cùng Tổ chức Động vật Châu Á (Animals Asia Foundation - AAF) triển khai dự án cải thiện phúc lợi cho đàn voi nhà tại Đắk Lắk và cứu trợ gấu ngựa. Đồng thời, Cocoon đồng hành cùng các trung tâm bảo tồn thiên nhiên phủ xanh rừng đầu nguồn tại Việt Nam.'
   }
 ];
 
 export const REVIEWS_DATA: ReviewItem[] = [
   {
     id: 'rev-1',
-    author: 'Nguyễn Thu Trang',
-    city: 'Hà Nội',
-    verified: true,
-    productName: 'Nước tẩy trang bí đao 500ml',
-    date: '14/10/2026',
-    content: 'Mình da dầu mụn rất nhạy cảm, dùng nhiều loại micellar water của Pháp hay bị khô căng ở cánh mũi. Đổi sang nước tẩy trang bí đao của Cocoon thấy sạch dịu, da mềm mà không hề bị châm chích. Mùi tràm trà và bí đao rất dễ chịu.',
-    rating: 5
-  },
-  {
-    id: 'rev-2',
     author: 'Trần Minh Hoàng',
     city: 'TP. Hồ Chí Minh',
     verified: true,
-    productName: 'Cà phê Đắk Lắk làm sạch da chết cơ thể',
+    productName: 'Cà phê Đắk Lắk làm sạch da chết cơ thể 200ml',
     date: '28/09/2026',
     content: 'Hạt cà phê xay cực kỳ đều và không bị sắc cạnh, mát-xa trên da êm mượt. Tắm xong da trơn mịn thơm phức mùi cà phê nguyên chất, vùng khủy tay và đầu gối mềm hơn hẳn sau 2 tuần.',
     rating: 5
   },
   {
-    id: 'rev-3',
+    id: 'rev-2',
     author: 'Lê Ngọc Ánh',
     city: 'Đà Nẵng',
     verified: true,
-    productName: 'Nước dưỡng tóc tinh dầu bưởi 140ml',
+    productName: 'Nước dưỡng tóc tinh dầu bưởi Cocoon 140ml',
     date: '05/10/2026',
-    content: 'Sau khi sinh tóc mình rụng rất nhiều. Kiên trì dùng chai xịt dưỡng bưởi này mỗi tối sau khi sấy tóc, sau 1 tháng thấy tóc con mọc lởm chởm ở vùng trán. Ưng nhất là không bị bết rít như dầu dưỡng thông thường.',
+    content: 'Sau khi sinh tóc mình rụng rất nhiều. Kiên trì dùng chai xịt dưỡng bưởi này mỗi tối sau khi sấy tóc, sau 1 tháng thấy tóc con mọc lởm chởm ở vùng trán. Ưng nhất là không bị bết rít.',
+    rating: 5
+  },
+  {
+    id: 'rev-3',
+    author: 'Nguyễn Thu Trang',
+    city: 'Hà Nội',
+    verified: true,
+    productName: 'Nước sen Hậu Giang làm dịu & cấp ẩm Cocoon',
+    date: '14/10/2026',
+    content: 'Da mình cực kỳ nhạy cảm và dễ đỏ. Nước sen vỗ lên mát rượi, dịu ngay lập tức mà không hề bị châm chích hay bết dính. Mùi sen nhẹ thanh rất thư giãn.',
     rating: 5
   },
   {
     id: 'rev-4',
-    author: 'Vũ Hải Đăng',
+    author: 'Phạm Phương Thảo',
     city: 'Cần Thơ',
     verified: true,
-    productName: 'Mặt nạ nghệ Hưng Yên 100ml',
-    date: '20/09/2026',
-    content: 'Trước đây sợ đắp nghệ bị vàng mặt mấy ngày không hết, nhưng mặt nạ nghệ Cocoon rửa với nước ấm là sạch trơn. Vết thâm mụn mới mờ khá nhanh, da trông sáng khỏe tự nhiên.',
+    productName: 'Son dưỡng dầu dừa Bến Tre Cocoon 5g',
+    date: '20/10/2026',
+    content: 'Giá chỉ 32k mà dưỡng ẩm đỉnh thật sự! Tối thoa một lớp dày sáng dậy môi mềm mượt, đánh son kem lì không bị lộ vân môi chút nào.',
     rating: 5
   }
 ];
@@ -637,33 +482,33 @@ export const REVIEWS_DATA: ReviewItem[] = [
 export const FAQ_DATA = [
   {
     question: 'Cocoon có phải là thương hiệu mỹ phẩm thuần chay không?',
-    answer: 'Cocoon định vị sản phẩm theo hướng thuần chay (100% Vegan). Tất cả công thức sản phẩm của Cocoon cam kết không sử dụng bất kỳ nguyên liệu nào có nguồn gốc từ động vật (như sáp ong, mỡ cừu, dịch ốc sên, collagen động vật). Người mua nên xem thông tin sản phẩm chi tiết và phạm vi chứng nhận được công bố chính thức trên website Cocoon.'
+    answer: 'Cocoon định vị sản phẩm theo hướng thuần chay 100% (Vegan). Tất cả công thức sản phẩm của Cocoon cam kết không sử dụng bất kỳ nguyên liệu nào có nguồn gốc từ động vật (như sáp ong, mỡ cừu, dịch ốc sên, collagen động vật). Người mua nên xem thông tin sản phẩm chi tiết và phạm vi chứng nhận được công bố chính thức trên website Cocoon.'
   },
   {
     question: 'Làm sao để chọn sản phẩm phù hợp với da hoặc tóc?',
-    answer: 'Bạn nên bắt đầu từ nhu cầu và tình trạng hiện tại của làn da hoặc mái tóc (ví dụ: da cần làm sạch dầu thừa, da cần cấp ẩm, tóc gãy rụng, da cơ thể sần sùi). Đọc kỹ bảng mô tả, bảng thành phần đầy đủ và tuân theo hướng dẫn sử dụng của từng sản phẩm. Bạn cũng có thể dùng công cụ chọn lộ trình theo nhu cầu ngay trên trang này.'
+    answer: 'Bạn nên bắt đầu từ nhu cầu và tình trạng hiện tại của làn da hoặc mái tóc (ví dụ: da cần làm dịu nhạy cảm, tóc gãy rụng, da cơ thể sần sùi). Đọc kỹ bảng mô tả, bảng thành phần đầy đủ và tuân theo hướng dẫn sử dụng của từng sản phẩm. Bạn cũng có thể dùng công cụ chọn lộ trình theo nhu cầu ngay trên trang này.'
   },
   {
     question: 'Sản phẩm có thử nghiệm trên động vật không?',
-    answer: 'Không. Cocoon cam kết nhân đạo và không thử nghiệm trên động vật trong bất kỳ giai đoạn phát triển nào. Thương hiệu được chứng nhận bởi Cruelty Free International (Leaping Bunny) và tổ chức PETA (Beauty Without Bunnies).'
+    answer: 'Tuyệt đối không. Cocoon cam kết nhân đạo và không thử nghiệm trên động vật trong bất kỳ giai đoạn phát triển nào. Thương hiệu được chứng nhận bởi Cruelty Free International (Leaping Bunny) và tổ chức PETA (Beauty Without Bunnies).'
   },
   {
     question: 'Làm thế nào để đặt hàng?',
-    answer: 'Bạn chỉ cần chọn sản phẩm yêu thích, kiểm tra dung tích và giá niêm yết, nhấn nút "Thêm vào giỏ" hoặc "Mua ngay". Tiếp theo, mở giỏ hàng để kiểm tra số lượng và điền thông tin giao nhận để hoàn tất đặt hàng qua phương thức thanh toán thuận tiện nhất (COD nhận hàng thanh toán hoặc chuyển khoản).'
+    answer: 'Bạn chỉ cần chọn sản phẩm yêu thích, kiểm tra dung tích và giá niêm yết, nhấn nút "Thêm vào giỏ" hoặc "Mua ngay". Tiếp theo, mở giỏ hàng để kiểm tra số lượng và điền thông tin giao nhận để hoàn tất đặt hàng qua phương thức thanh toán thuận tiện nhất (COD nhận hàng thanh toán hoặc chuyển khoản VietQR).'
   },
   {
     question: 'Phí giao hàng và thời gian nhận hàng là bao lâu?',
     answer: 'Cocoon áp dụng chính sách miễn phí giao hàng toàn quốc cho đơn hàng có giá trị từ 249.000đ trở lên. Với đơn hàng dưới ngưỡng, phí vận chuyển tiêu chuẩn là 25.000đ - 35.000đ tùy khu vực. Thời gian giao hàng thông thường từ 1–2 ngày làm việc tại TP.HCM & Hà Nội, và 2–4 ngày tại các tỉnh thành khác.'
   },
   {
-    question: 'Cocoon có chương trình thu hồi vỏ chai hoặc túi refill không?',
-    answer: 'Có. Cocoon triển khai cả hai giải pháp bền vững: cung cấp các dòng Túi Refill dung tích lớn tiết kiệm đến 80% rác thải nhựa, và chương trình định kỳ thu hồi vỏ chai rỗng đã làm sạch tại hệ thống cửa hàng và điểm phân phối để tái chế, đổi lấy quà tặng tri ân.'
+    question: 'Cocoon có chương trình thu hồi vỏ chai không?',
+    answer: 'Có. Cocoon triển khai chương trình định kỳ thu hồi vỏ chai rỗng đã làm sạch tại hệ thống cửa hàng và điểm phân phối đối tác để tái chế, đổi lấy quà tặng tri ân son dưỡng dừa Bến Tre hoặc các quà tặng trải nghiệm thuần chay.'
   }
 ];
 
 export const COMPANY_INFO = {
   legalName: 'Công ty TNHH Mỹ phẩm Nature Story',
-  brandName: 'Cocoon Việt Nam',
+  brandName: 'Cocoon Việt Nam (The Cocoon Original Viet Nam)',
   address: '38C - 39C Khu phố 1, Quốc Lộ 1A, Phường Tân Thới Hiệp, Quận 12, Thành phố Hồ Chí Minh, Việt Nam',
   hotline: '1800 646487 (Miễn phí cước gọi)',
   email: 'cskh@cocoonvietnam.com',

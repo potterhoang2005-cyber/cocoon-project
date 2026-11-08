@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Trash2, ShoppingBag, ArrowRight, Truck, Check } from 'lucide-react';
 import { CartItem } from '../types';
-import { BottleIllustration } from './BotanicalIllustrations';
+import { AuthenticProductVisual } from './AuthenticProductVisual';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -39,6 +39,18 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     currency: 'VND'
   }).format(subtotal);
 
+  const getVisualType = (p: any): any => {
+    if (p.id.includes('bi-dao')) return 'bi-dao-cleanser';
+    if (p.id.includes('ca-phe-dak-lak-tay-da-chet-co-the')) return 'coffee-body';
+    if (p.id.includes('tinh-dau-buoi')) return 'pomelo-hair';
+    if (p.id.includes('nghe')) return 'turmeric-mask';
+    if (p.id.includes('sen')) return 'sen-cleanser';
+    if (p.id.includes('son-duong-dau-dua')) return 'coconut-lip';
+    if (p.id.includes('moi-ca-phe')) return 'coffee-lip';
+    if (p.id.includes('refill')) return 'coffee-refill';
+    return 'bi-dao-cleanser';
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-xs animate-in fade-in duration-200">
       <div
@@ -50,7 +62,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-[#234A35]" />
             <h3 className="font-serif text-lg font-bold text-[#162B20]">
-              Giỏ hàng của bạn
+              Giỏ hàng chính hãng
             </h3>
             <span className="text-xs font-semibold text-[#667B6E] tabular-nums">
               ({items.reduce((acc, i) => acc + i.quantity, 0)})
@@ -127,10 +139,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   className="bg-white p-3.5 rounded-xl border border-[#E3DACB] flex gap-3.5 items-center"
                 >
                   {/* Thumbnail */}
-                  <div className="w-14 h-20 bg-[#F4EFE6] rounded-md flex items-center justify-center p-1 shrink-0">
-                    <BottleIllustration
-                      type={item.product.category === 'haircare' ? 'spray' : item.product.category === 'bodycare' ? 'jar' : item.product.category === 'refill' ? 'refill' : 'pump'}
-                      title={item.product.name}
+                  <div className="w-16 h-20 bg-[#F5F0E8] rounded-md flex items-center justify-center p-1 shrink-0">
+                    <AuthenticProductVisual
+                      type={getVisualType(item.product)}
+                      name={item.product.name}
                       capacity={item.selectedCapacity}
                     />
                   </div>
@@ -141,7 +153,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       {item.product.name}
                     </h4>
                     <p className="text-[11px] text-[#6E8073]">
-                      Dung tích: <span className="font-medium text-[#234A35]">{item.selectedCapacity}</span>
+                      Dung tích: <span className="font-bold text-[#234A35]">{item.selectedCapacity}</span>
                     </p>
                     <p className="text-xs font-bold text-[#1F3D2C] mt-1 tabular-nums">
                       {formattedPrice}
@@ -193,7 +205,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
 
             <p className="text-[11px] text-[#7A8E80]">
-              * Đã bao gồm thuế GTGT. Phí vận chuyển sẽ được tính tại bước thanh toán.
+              * Giá niêm yết chính hãng đã bao gồm thuế GTGT.
             </p>
 
             <button

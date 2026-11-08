@@ -21,6 +21,7 @@ export interface Product {
   isRefill?: boolean;
   texture: string;
   colorHex: string;
+  imageUrl?: string;
 }
 
 export interface Ingredient {

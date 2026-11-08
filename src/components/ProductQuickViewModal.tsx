@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, Check, Star, ShoppingBag, ShieldCheck, Leaf, ArrowRight } from 'lucide-react';
+import { X, Check, Star, ShoppingBag } from 'lucide-react';
 import { Product } from '../types';
-import { BottleIllustration } from './BotanicalIllustrations';
+import { AuthenticProductVisual } from './AuthenticProductVisual';
 
 interface ProductQuickViewModalProps {
   product: Product | null;
@@ -20,12 +20,17 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
 
-  const getIllustrationType = () => {
-    if (product.category === 'haircare') return 'spray';
-    if (product.category === 'bodycare') return 'jar';
-    if (product.category === 'refill') return 'refill';
-    if (product.id.includes('tinh-chat')) return 'dropper';
-    return 'pump';
+  // Determine correct visual type
+  const getVisualType = (): any => {
+    if (product.id.includes('bi-dao')) return 'bi-dao-cleanser';
+    if (product.id.includes('ca-phe-dak-lak-tay-da-chet-co-the')) return 'coffee-body';
+    if (product.id.includes('tinh-dau-buoi')) return 'pomelo-hair';
+    if (product.id.includes('nghe')) return 'turmeric-mask';
+    if (product.id.includes('sen')) return 'sen-cleanser';
+    if (product.id.includes('son-duong-dau-dua')) return 'coconut-lip';
+    if (product.id.includes('moi-ca-phe')) return 'coffee-lip';
+    if (product.id.includes('refill')) return 'coffee-refill';
+    return 'bi-dao-cleanser';
   };
 
   const handleAddToCart = () => {
@@ -58,21 +63,22 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
         </button>
 
         {/* Left: Product Visual Showcase */}
-        <div className="w-full md:w-5/12 bg-gradient-to-b from-[#F2ECE1] to-[#E9DFCE] p-6 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-[#DFD5C3]">
-          <div className="w-40 h-64 flex items-center justify-center">
-            <BottleIllustration
-              type={getIllustrationType()}
-              title={product.name}
+        <div className="w-full md:w-5/12 bg-gradient-to-b from-[#F4EFE6] to-[#E5DCCF] p-6 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-[#DFD5C3]">
+          <div className="w-44 h-72 flex items-center justify-center">
+            <AuthenticProductVisual
+              type={getVisualType()}
+              name={product.name}
               capacity={selectedCapacity}
+              imageUrl={product.imageUrl}
             />
           </div>
 
-          <div className="mt-4 text-center">
-            <span className="text-[11px] font-semibold tracking-wider text-[#2D5A3F] uppercase">
+          <div className="mt-2 text-center">
+            <span className="text-[11px] font-bold tracking-wider text-[#2D5A3F] uppercase">
               {product.categoryLabel}
             </span>
-            <p className="text-xs text-[#526357] font-medium mt-1">
-              {product.ingredientRegion}
+            <p className="text-xs text-[#526357] font-medium mt-0.5">
+              Xuất xứ: {product.ingredientRegion}
             </p>
           </div>
         </div>
@@ -82,7 +88,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
           {/* Header */}
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-xs font-semibold text-[#234A35]">
+              <span className="text-xs font-bold text-[#234A35]">
                 {product.ingredientKey}
               </span>
               <span className="text-gray-300">·</span>
@@ -99,7 +105,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
             <p className="text-xs text-[#6B7E72] italic">{product.subtitle}</p>
 
             <div className="mt-3 flex items-baseline gap-3">
-              <span className="text-xl font-bold text-[#234A35] tabular-nums">
+              <span className="text-2xl font-bold text-[#234A35] tabular-nums">
                 {formattedPrice}
               </span>
               {product.originalPrice && (
@@ -155,7 +161,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
                     onClick={() => setSelectedCapacity(cap)}
                     className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-colors cursor-pointer ${
                       selectedCapacity === cap
-                        ? 'border-[#234A35] bg-[#234A35] text-white'
+                        ? 'border-[#234A35] bg-[#234A35] text-white font-bold'
                         : 'border-[#D9CFBF] bg-white text-[#243329] hover:bg-[#F3EEE3]'
                     }`}
                   >
@@ -197,12 +203,12 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
               {added ? (
                 <>
                   <Check className="w-4 h-4" />
-                  <span>Đã thêm vào giỏ!</span>
+                  <span>Đã thêm vào giỏ hàng!</span>
                 </>
               ) : (
                 <>
                   <ShoppingBag className="w-4 h-4" />
-                  <span>Thêm vào giỏ hàng</span>
+                  <span>Thêm vào giỏ ({formattedPrice})</span>
                 </>
               )}
             </button>
@@ -210,7 +216,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
 
           {/* Transparent note */}
           <p className="text-[10px] text-[#788B7D] text-center pt-1 border-t border-[#ECE3D5]">
-            * Tên, dung tích, giá và tuyên bố công dụng được đối soát theo tài liệu chính thức từ Cocoon Vietnam.
+            * Giá niêm yết chính hãng The Cocoon Original Viet Nam. Đã bao gồm thuế GTGT.
           </p>
         </div>
       </div>

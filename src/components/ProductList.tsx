@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Eye, ShoppingBag, Star, AlertCircle, Sparkles, Filter } from 'lucide-react';
+import { Eye, ShoppingBag, Star, AlertCircle } from 'lucide-react';
 import { Product } from '../types';
 import { PRODUCTS_DATA } from '../data/cocoonData';
-import { BottleIllustration } from './BotanicalIllustrations';
+import { AuthenticProductVisual } from './AuthenticProductVisual';
 
 interface ProductListProps {
   selectedCategory: string;
@@ -19,21 +19,12 @@ export const ProductList: React.FC<ProductListProps> = ({
 }) => {
   const [filter, setFilter] = useState<string>('all');
 
-  // Filter products by selected category if set, or active tab
   const activeCategoryFilter = selectedCategory !== 'all' ? selectedCategory : filter;
 
   const filteredProducts = PRODUCTS_DATA.filter((p) => {
     if (activeCategoryFilter === 'all') return true;
     return p.category === activeCategoryFilter;
   });
-
-  const getIllustrationType = (p: Product) => {
-    if (p.category === 'haircare') return 'spray';
-    if (p.category === 'bodycare') return 'jar';
-    if (p.category === 'refill') return 'refill';
-    if (p.id.includes('tinh-chat')) return 'dropper';
-    return 'pump';
-  };
 
   return (
     <section id="products" className="py-16 sm:py-20 bg-[#FAF7F2] border-b border-[#ECE6D9]">
@@ -43,17 +34,17 @@ export const ProductList: React.FC<ProductListProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
           <div className="max-w-3xl">
             <div className="text-xs font-semibold tracking-widest text-[#2D5A3F] uppercase mb-2">
-              Sản phẩm nổi bật / Best Sellers
+              Sản phẩm chính hãng Cocoon
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#162B20] text-balance mb-3">
-              Những lựa chọn được yêu thích
+              Những lựa chọn được yêu thích nhất
             </h2>
             <p className="text-base text-[#4D5E52] leading-relaxed">
-              Khám phá các sản phẩm nổi bật của Cocoon và xem chi tiết để chọn sản phẩm phù hợp với nhu cầu của bạn.
+              Các sản phẩm chính hãng Cocoon với đầy đủ dung tích, bảng thành phần minh bạch và mức giá niêm yết chính thức.
             </p>
           </div>
 
-          {/* Interactive filter tabs (functional buttons with click handlers per frontend design constitution) */}
+          {/* Interactive filter tabs */}
           <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#EFE9DD] rounded-lg border border-[#DDD3C2] self-start md:self-auto">
             <button
               onClick={() => {
@@ -62,7 +53,7 @@ export const ProductList: React.FC<ProductListProps> = ({
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
                 activeCategoryFilter === 'all'
-                  ? 'bg-[#234A35] text-white shadow-xs'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
@@ -75,7 +66,7 @@ export const ProductList: React.FC<ProductListProps> = ({
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
                 activeCategoryFilter === 'skincare'
-                  ? 'bg-[#234A35] text-white shadow-xs'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
@@ -88,7 +79,7 @@ export const ProductList: React.FC<ProductListProps> = ({
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
                 activeCategoryFilter === 'bodycare'
-                  ? 'bg-[#234A35] text-white shadow-xs'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
@@ -101,11 +92,24 @@ export const ProductList: React.FC<ProductListProps> = ({
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
                 activeCategoryFilter === 'haircare'
-                  ? 'bg-[#234A35] text-white shadow-xs'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
               Tóc
+            </button>
+            <button
+              onClick={() => {
+                setFilter('lipcare');
+                onSelectCategory('lipcare');
+              }}
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+                activeCategoryFilter === 'lipcare'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
+                  : 'text-[#44584B] hover:text-[#162B20]'
+              }`}
+            >
+              Dưỡng môi
             </button>
             <button
               onClick={() => {
@@ -114,11 +118,11 @@ export const ProductList: React.FC<ProductListProps> = ({
               }}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
                 activeCategoryFilter === 'refill'
-                  ? 'bg-[#234A35] text-white shadow-xs'
+                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Túi refill
+              Túi Refill
             </button>
           </div>
         </div>
@@ -134,33 +138,34 @@ export const ProductList: React.FC<ProductListProps> = ({
             return (
               <div
                 key={p.id}
-                className="bg-[#FCFBF8] rounded-xl border border-[#E7E0D3] overflow-hidden flex flex-col justify-between group hover:border-[#234A35]/40 hover:shadow-md transition-all duration-200"
+                className="bg-[#FCFBF8] rounded-xl border border-[#E7E0D3] overflow-hidden flex flex-col justify-between group hover:border-[#234A35]/50 hover:shadow-md transition-all duration-200"
               >
-                {/* Visual Header / Image area */}
-                <div className="relative bg-gradient-to-b from-[#F4EFE6] to-[#ECE3D4] p-6 flex items-center justify-center h-64 border-b border-[#E8DFC\D] group-hover:from-[#F0E9DC] transition-colors">
+                {/* Visual Packaging Header */}
+                <div className="relative bg-gradient-to-b from-[#F5F0E8] to-[#ECE3D5] p-5 flex items-center justify-center h-64 border-b border-[#E6DDD0] group-hover:from-[#F0E8DD] transition-colors">
                   
                   {/* Badge */}
                   {p.badge && (
-                    <span className="absolute top-3 left-3 text-[10px] font-semibold tracking-wider text-[#244936] bg-[#E2ECE4] px-2 py-0.5 rounded">
+                    <span className="absolute top-3 left-3 text-[10px] font-bold tracking-wider text-[#244936] bg-[#E2ECE4] px-2 py-0.5 rounded shadow-2xs">
                       {p.badge}
                     </span>
                   )}
 
-                  {/* Quick View Floating Action */}
+                  {/* Quick View Action */}
                   <button
                     onClick={() => onQuickView(p)}
-                    aria-label={`Xem nhanh chi tiết ${p.name}`}
-                    className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-[#3D5244] hover:text-[#162B20] hover:bg-white shadow-xs opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    aria-label={`Xem chi tiết ${p.name}`}
+                    className="absolute top-3 right-3 p-1.5 rounded-full bg-white/95 text-[#3D5244] hover:text-[#162B20] hover:bg-white shadow-xs opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
                   >
                     <Eye className="w-4 h-4" />
                   </button>
 
-                  {/* Bottle Illustration */}
-                  <div className="w-32 h-52 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                    <BottleIllustration
-                      type={getIllustrationType(p)}
-                      title={p.name}
+                  {/* Authentic Packaging Visual */}
+                  <div className="w-36 h-56 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
+                    <AuthenticProductVisual
+                      type={p.visualType}
+                      name={p.name}
                       capacity={p.capacity}
+                      imageUrl={p.imageUrl}
                     />
                   </div>
                 </div>
@@ -168,10 +173,10 @@ export const ProductList: React.FC<ProductListProps> = ({
                 {/* Card Content */}
                 <div className="p-5 flex-1 flex flex-col justify-between text-left space-y-3">
                   <div>
-                    {/* Metadata line per zero-pill rule */}
+                    {/* Metadata line */}
                     <div className="flex items-center justify-between text-[11px] text-[#697C6E] mb-1">
-                      <span>{p.categoryLabel}</span>
-                      <span className="font-medium text-[#2D5A3F]">{p.capacity}</span>
+                      <span className="font-medium">{p.categoryLabel}</span>
+                      <span className="font-bold text-[#234A35]">{p.capacity}</span>
                     </div>
 
                     <h3 className="font-serif text-base font-bold text-[#182F22] line-clamp-1 group-hover:text-[#234A35] transition-colors">
@@ -190,15 +195,15 @@ export const ProductList: React.FC<ProductListProps> = ({
                       <span className="tabular-nums font-semibold">{p.rating}</span>
                       <span className="text-[#889B8D] ml-1">({p.reviewCount})</span>
                     </div>
-                    <span className="text-[#728578] truncate max-w-[120px]">
+                    <span className="text-[#728578] truncate max-w-[130px] font-medium">
                       {p.ingredientKey}
                     </span>
                   </div>
 
-                  {/* Price & CTA bar */}
+                  {/* Real Price & CTA bar */}
                   <div className="pt-1 flex items-center justify-between gap-2">
                     <div>
-                      <p className="text-sm sm:text-base font-bold text-[#1B3627] tabular-nums">
+                      <p className="text-base font-bold text-[#1B3627] tabular-nums">
                         {formattedPrice}
                       </p>
                       {p.originalPrice && (
@@ -232,10 +237,10 @@ export const ProductList: React.FC<ProductListProps> = ({
         </div>
 
         {/* Transparent Note from PDF */}
-        <div className="mt-8 p-3.5 bg-[#F2EDE2] rounded-lg border border-[#E0D7C8] flex items-start gap-2.5 text-xs text-[#526458]">
+        <div className="mt-8 p-4 bg-[#F2EDE2] rounded-lg border border-[#E0D7C8] flex items-start gap-2.5 text-xs text-[#526458]">
           <AlertCircle className="w-4 h-4 text-[#8C7A60] shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong className="font-semibold text-[#304537]">Lưu ý nội dung:</strong> Tên, dung tích, giá niêm yết, tồn kho, đánh giá và tuyên bố công dụng được chuẩn hóa theo thông tin chính thức của Cocoon Việt Nam. Không hứa hẹn kết quả tuyệt đối.
+            <strong className="font-semibold text-[#304537]">Cam kết giá niêm yết:</strong> Toàn bộ tên sản phẩm, dung tích (ml/g), giá bán lẻ và công dụng được cập nhật chính xác từ bảng giá niêm yết chính hãng Cocoon Việt Nam (Cocoon Original Viet Nam).
           </p>
         </div>
 

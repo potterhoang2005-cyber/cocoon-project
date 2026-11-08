@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Facebook, Instagram, Youtube, Mail, Phone, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowRight, Check, Facebook, Instagram, Youtube } from 'lucide-react';
 import { COMPANY_INFO } from '../data/cocoonData';
+import { CocoonBrandLogo } from './CocoonBrandLogo';
 
 interface FooterProps {
   onNavClick: (anchor: string) => void;
@@ -35,18 +36,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onSelectCategory }) 
         {/* Main 5-Group Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-[#1F392B]">
           
-          {/* Brand Info & Group 5: Newsletter (5 cols) */}
+          {/* Brand Info with Official Light Logo & Group 5: Newsletter (4 cols) */}
           <div className="lg:col-span-4 space-y-5 text-left">
             <div>
-              <div className="flex items-baseline gap-2">
-                <span className="font-serif text-2xl font-bold tracking-[0.16em] text-white">
-                  COCOON
-                </span>
-                <span className="text-[10px] tracking-widest text-[#A2C7AD] font-semibold uppercase">
-                  VIETNAM
-                </span>
-              </div>
-              <p className="text-xs text-[#95AB9D] mt-1 font-light">
+              <CocoonBrandLogo variant="light" size="md" />
+              <p className="text-xs text-[#95AB9D] mt-2 font-light">
                 mỹ phẩm thuần chay từ nguyên liệu Việt Nam
               </p>
             </div>
@@ -137,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onSelectCategory }) 
             </div>
           </div>
 
-          {/* Nhóm 1: Hỗ trợ khách hàng (2-3 cols) */}
+          {/* Nhóm 1: Hỗ trợ khách hàng (3 cols) */}
           <div className="lg:col-span-3 space-y-3 text-left">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               Hỗ trợ khách hàng
@@ -171,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onSelectCategory }) 
             </ul>
           </div>
 
-          {/* Nhóm 2: Về Cocoon (2-3 cols) */}
+          {/* Nhóm 2: Về Cocoon (3 cols) */}
           <div className="lg:col-span-3 space-y-3 text-left">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
               Về Cocoon Việt Nam
@@ -259,7 +253,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onSelectCategory }) 
         {/* PDF Assignment Disclaimer Banner */}
         <div className="mt-6 pt-4 border-t border-[#1C3527] text-center text-[11px] text-[#698272] leading-relaxed">
           <p>
-            © 2026 Cocoon Việt Nam. Tất cả quyền được bảo lưu.
+            © 2026 The Cocoon Original Viet Nam. Tất cả quyền được bảo lưu.
           </p>
           <p className="mt-1 text-[#8FA597] italic">
             * Lưu ý: Đây là bản đề xuất nội dung cho bài tập / thiết kế; không phải trang chính thức do Cocoon phát hành.

@@ -52,7 +52,7 @@ export const BrandPhilosophy: React.FC<BrandPhilosophyProps> = ({
             return (
               <div
                 key={idx}
-                className="bg-[#FCFBF8] p-8 rounded-xl border border-[#E5DEC\D] border-[#E5DDD0] flex flex-col justify-between hover:border-[#234A35]/40 transition-colors"
+                className="bg-[#FCFBF8] p-8 rounded-xl border border-[#E5DDD0] flex flex-col justify-between hover:border-[#234A35]/40 transition-colors"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-[#EBF2ED] text-[#234A35] flex items-center justify-center mb-6">

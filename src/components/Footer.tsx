@@ -235,18 +235,38 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, onSelectCategory }) 
 
         </div>
 
-        {/* Legal & Business Entity Info per PDF */}
-        <div className="pt-8 pb-4 text-xs text-[#7E9687] space-y-2 text-left">
-          <p className="font-semibold text-[#B9CEBF]">
-            {COMPANY_INFO.legalName}
-          </p>
-          <p>
-            Địa chỉ: {COMPANY_INFO.address}
-          </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
-            <span>Điện thoại: <strong className="text-[#C5D7CB]">{COMPANY_INFO.hotline}</strong></span>
-            <span>Email: <strong className="text-[#C5D7CB]">{COMPANY_INFO.email}</strong></span>
-            <span>{COMPANY_INFO.businessLicense}</span>
+        {/* Legal & Business Entity Info per authentic corporate document (image_b3434397.png) */}
+        <div className="pt-8 pb-4 text-xs text-[#95AB9D] space-y-6 text-left border-t border-[#1F392B]">
+          {/* Section 1: Website Owner */}
+          <div className="space-y-1">
+            <h5 className="font-bold text-[#E5D2A6] uppercase tracking-wider text-xs">
+              WEBSITE THUỘC QUYỀN {COMPANY_INFO.ownerCompany}
+            </h5>
+            <p className="text-[#AEC2B4]">
+              {COMPANY_INFO.ownerCert}
+            </p>
+            <p className="text-[#8FA597]">
+              {COMPANY_INFO.ownerAddress}
+            </p>
+            <p className="text-[#AEC2B4] pt-0.5">
+              ĐIỆN THOẠI: <strong className="text-white">{COMPANY_INFO.hotline}</strong> — EMAIL: <strong className="text-white">{COMPANY_INFO.email.toUpperCase()}</strong>
+            </p>
+          </div>
+
+          {/* Section 2: Manufacturer & Responsible entity */}
+          <div className="space-y-1 pt-2 border-t border-[#1C3527]">
+            <h5 className="font-bold text-[#E5D2A6] uppercase tracking-wider text-xs">
+              SẢN XUẤT VÀ CHỊU TRÁCH NHIỆM VỀ HÀNG HOÁ: {COMPANY_INFO.manufacturerCompany}
+            </h5>
+            <p className="text-[#AEC2B4]">
+              {COMPANY_INFO.manufacturerCert}
+            </p>
+            <p className="text-[#8FA597]">
+              {COMPANY_INFO.manufacturerAddress}
+            </p>
+            <p className="text-[#AEC2B4] pt-0.5">
+              ĐIỆN THOẠI: <strong className="text-white">{COMPANY_INFO.hotline}</strong> — EMAIL: <strong className="text-white">{COMPANY_INFO.email.toUpperCase()}</strong>
+            </p>
           </div>
         </div>
 

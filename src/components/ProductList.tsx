@@ -44,85 +44,87 @@ export const ProductList: React.FC<ProductListProps> = ({
             </p>
           </div>
 
-          {/* Interactive filter tabs */}
+          {/* Interactive filter tabs with counts */}
           <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#EFE9DD] rounded-lg border border-[#DDD3C2] self-start md:self-auto">
             <button
               onClick={() => {
                 setFilter('all');
                 onSelectCategory('all');
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeCategoryFilter === 'all'
                   ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Tất cả
+              <span>Tất cả</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategoryFilter === 'all' ? 'bg-white/20 text-white' : 'bg-[#E2DACB] text-[#55695C]'}`}>
+                {PRODUCTS_DATA.length}
+              </span>
             </button>
             <button
               onClick={() => {
                 setFilter('skincare');
                 onSelectCategory('skincare');
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeCategoryFilter === 'skincare'
                   ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Chăm sóc da
+              <span>Chăm sóc da mặt</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategoryFilter === 'skincare' ? 'bg-white/20 text-white' : 'bg-[#E2DACB] text-[#55695C]'}`}>
+                {PRODUCTS_DATA.filter(p => p.category === 'skincare').length}
+              </span>
             </button>
             <button
               onClick={() => {
                 setFilter('bodycare');
                 onSelectCategory('bodycare');
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeCategoryFilter === 'bodycare'
                   ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Cơ thể
+              <span>Chăm sóc cơ thể</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategoryFilter === 'bodycare' ? 'bg-white/20 text-white' : 'bg-[#E2DACB] text-[#55695C]'}`}>
+                {PRODUCTS_DATA.filter(p => p.category === 'bodycare').length}
+              </span>
             </button>
             <button
               onClick={() => {
                 setFilter('haircare');
                 onSelectCategory('haircare');
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeCategoryFilter === 'haircare'
                   ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Tóc
+              <span>Chăm sóc tóc</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategoryFilter === 'haircare' ? 'bg-white/20 text-white' : 'bg-[#E2DACB] text-[#55695C]'}`}>
+                {PRODUCTS_DATA.filter(p => p.category === 'haircare').length}
+              </span>
             </button>
             <button
               onClick={() => {
                 setFilter('lipcare');
                 onSelectCategory('lipcare');
               }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
                 activeCategoryFilter === 'lipcare'
                   ? 'bg-[#234A35] text-white shadow-xs font-semibold'
                   : 'text-[#44584B] hover:text-[#162B20]'
               }`}
             >
-              Dưỡng môi
-            </button>
-            <button
-              onClick={() => {
-                setFilter('refill');
-                onSelectCategory('refill');
-              }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors cursor-pointer ${
-                activeCategoryFilter === 'refill'
-                  ? 'bg-[#234A35] text-white shadow-xs font-semibold'
-                  : 'text-[#44584B] hover:text-[#162B20]'
-              }`}
-            >
-              Túi Refill
+              <span>Dưỡng môi</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeCategoryFilter === 'lipcare' ? 'bg-white/20 text-white' : 'bg-[#E2DACB] text-[#55695C]'}`}>
+                {PRODUCTS_DATA.filter(p => p.category === 'lipcare').length}
+              </span>
             </button>
           </div>
         </div>

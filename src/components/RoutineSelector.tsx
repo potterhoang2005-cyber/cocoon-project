@@ -48,8 +48,8 @@ export const RoutineSelector: React.FC<RoutineSelectorProps> = ({
           </p>
         </div>
 
-        {/* 4 Needs Selector Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* 3 Needs Selector Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {ROUTINE_NEEDS_DATA.map((need) => {
             const Icon = getNeedIcon(need.id);
             const isSelected = need.id === selectedNeedId;
@@ -102,10 +102,10 @@ export const RoutineSelector: React.FC<RoutineSelectorProps> = ({
 
         {/* Selected Routine Detail Box */}
         <div className="bg-[#FCFBF8] rounded-2xl border border-[#DED4C2] p-6 sm:p-8 shadow-xs">
-          <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#E7DEC\-D] border-[#E8DEC\-D] pb-5 mb-6 gap-3">
+          <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-[#E5DDD0] pb-5 mb-6 gap-3">
             <div>
               <span className="text-xs font-semibold text-[#2D5A3F] uppercase tracking-wider">
-                Gợi ý chu trình 3 bước
+                Gợi ý chu trình theo nhu cầu ({activeNeed.steps.length} bước)
               </span>
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#162B20] mt-0.5">
                 {activeNeed.title}
@@ -124,8 +124,8 @@ export const RoutineSelector: React.FC<RoutineSelectorProps> = ({
             </button>
           </div>
 
-          {/* 3 Steps horizontal chain */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Steps chain */}
+          <div className={`grid grid-cols-1 gap-5 ${activeNeed.steps.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
             {activeNeed.steps.map((step) => (
               <div
                 key={step.stepNumber}
@@ -154,7 +154,7 @@ export const RoutineSelector: React.FC<RoutineSelectorProps> = ({
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#E8DFC\E] border-[#E5DDD0] flex items-center text-[11px] text-[#243329] font-medium">
+                <div className="mt-4 pt-3 border-t border-[#E5DDD0] flex items-center text-[11px] text-[#243329] font-medium">
                   <Check className="w-3.5 h-3.5 text-[#2D5A3F] mr-1.5" />
                   <span>Chuẩn khoa học da liễu</span>
                 </div>
@@ -163,7 +163,7 @@ export const RoutineSelector: React.FC<RoutineSelectorProps> = ({
           </div>
 
           {/* Mandatory Medical Disclaimer from PDF */}
-          <div className="mt-6 pt-5 border-t border-[#E8DEC\-D] border-[#E8DEC8] flex items-start gap-2.5 text-xs text-[#526558] bg-[#F2EDE2] p-3.5 rounded-lg">
+          <div className="mt-6 pt-5 border-t border-[#E8DEC8] flex items-start gap-2.5 text-xs text-[#526558] bg-[#F2EDE2] p-3.5 rounded-lg">
             <Info className="w-4 h-4 text-[#8C7A60] shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong className="font-semibold text-[#273B2E]">Ghi chú bắt buộc:</strong> Đây là gợi ý điều hướng mua sắm tham khảo, không thay thế việc chẩn đoán hay tư vấn y khoa của bác sĩ da liễu. Khách hàng vui lòng đọc kỹ bảng thành phần, hướng dẫn sử dụng và thử phản ứng trên vùng da nhỏ trước khi sử dụng rộng rãi.

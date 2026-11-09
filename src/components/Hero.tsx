@@ -9,8 +9,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreStory }) => {
-  const coffeeProduct = PRODUCTS_DATA[0]; // Cà phê Đắk Lắk
-  const pomeloProduct = PRODUCTS_DATA[1]; // Nước dưỡng tóc bưởi
+  const bidaoProduct = PRODUCTS_DATA.find((p) => p.id === 'nuoc-tay-trang-bi-dao') || PRODUCTS_DATA[0];
+  const coffeeProduct = PRODUCTS_DATA.find((p) => p.id === 'ca-phe-dak-lak-tay-da-chet-co-the') || PRODUCTS_DATA[1];
 
   return (
     <section id="hero" className="relative overflow-hidden bg-[#FAF7F2] pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-[#ECE6D9]">
@@ -118,12 +118,35 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreStory })
                   <span className="text-[#887864] font-medium text-[11px]">Chính hãng</span>
                 </div>
 
-                {/* Center Visual: The 2 Real flagship Cocoon items with Real Uploaded Photos */}
+                {/* Center Visual: 2 Flagship Cocoon items with Authentic Photos */}
                 <div className="grid grid-cols-2 gap-3 items-end justify-center py-2">
                   
-                  {/* Left: Cà phê Đắk Lắk 200ml */}
+                  {/* Left: Nước tẩy trang bí đao (ELLE Winner) */}
                   <div className="flex flex-col items-center group cursor-pointer" onClick={onExploreProducts}>
-                    <div className="w-32 sm:w-40 h-48 sm:h-56 bg-white rounded-xl p-2 border border-[#E3DACB] shadow-2xs flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
+                    <div className="w-32 sm:w-40 h-48 sm:h-56 bg-white rounded-xl p-2 border border-[#E3DACB] shadow-2xs flex items-center justify-center transition-transform group-hover:scale-105 duration-300 relative">
+                      <span className="absolute top-1.5 left-1.5 text-[9px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded">
+                        ELLE 2026
+                      </span>
+                      <img
+                        src={bidaoProduct.imageUrl}
+                        alt={bidaoProduct.name}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <span className="mt-2 text-xs font-bold text-[#162B20] text-center line-clamp-1">
+                      {bidaoProduct.vietnameseName}
+                    </span>
+                    <span className="text-xs font-bold text-[#234A35] tabular-nums mt-0.5">
+                      {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(bidaoProduct.price)}
+                    </span>
+                  </div>
+
+                  {/* Right: Cà phê Đắk Lắk 200ml */}
+                  <div className="flex flex-col items-center group cursor-pointer" onClick={onExploreProducts}>
+                    <div className="w-32 sm:w-40 h-48 sm:h-56 bg-white rounded-xl p-2 border border-[#E3DACB] shadow-2xs flex items-center justify-center transition-transform group-hover:scale-105 duration-300 relative">
+                      <span className="absolute top-1.5 right-1.5 text-[9px] font-bold text-[#234A35] bg-[#EBF2ED] border border-[#C5DACB] px-1.5 py-0.5 rounded">
+                        Bán chạy
+                      </span>
                       <img
                         src={coffeeProduct.imageUrl}
                         alt={coffeeProduct.name}
@@ -131,27 +154,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreStory })
                       />
                     </div>
                     <span className="mt-2 text-xs font-bold text-[#162B20] text-center line-clamp-1">
-                      Cà phê Đắk Lắk (200ml)
+                      {coffeeProduct.vietnameseName}
                     </span>
                     <span className="text-xs font-bold text-[#234A35] tabular-nums mt-0.5">
-                      139.000đ
-                    </span>
-                  </div>
-
-                  {/* Right: Nước dưỡng tóc tinh dầu bưởi 140ml */}
-                  <div className="flex flex-col items-center group cursor-pointer" onClick={onExploreProducts}>
-                    <div className="w-32 sm:w-40 h-48 sm:h-56 bg-white rounded-xl p-2 border border-[#E3DACB] shadow-2xs flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
-                      <img
-                        src={pomeloProduct.imageUrl}
-                        alt={pomeloProduct.name}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                    <span className="mt-2 text-xs font-bold text-[#162B20] text-center line-clamp-1">
-                      Nước dưỡng tóc bưởi
-                    </span>
-                    <span className="text-xs font-bold text-[#234A35] tabular-nums mt-0.5">
-                      165.000đ
+                      {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(coffeeProduct.price)}
                     </span>
                   </div>
 
@@ -159,7 +165,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreProducts, onExploreStory })
 
                 {/* Sub-card floating info */}
                 <div className="mt-3 pt-3 border-t border-[#D8CEBC] flex items-center justify-between text-xs text-[#384F40]">
-                  <span className="text-[11px] font-medium text-[#48604F]">Cà phê Đắk Lắk · Bưởi Việt Nam</span>
+                  <span className="text-[11px] font-medium text-[#48604F]">Bí đao miền nhiệt đới · Cà phê Đắk Lắk</span>
                   <span className="text-[11px] font-bold text-[#234A35]">100% Thuần chay</span>
                 </div>
               </div>

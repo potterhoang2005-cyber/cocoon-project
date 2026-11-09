@@ -79,7 +79,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 Từ khóa tìm kiếm phổ biến
               </span>
               <div className="flex flex-wrap gap-2 mt-2">
-                {['Nước tẩy trang bí đao', 'Cà phê Đắk Lắk', 'Nước dưỡng tóc bưởi', 'Mặt nạ nghệ', 'Túi Refill', 'Hoa sen Hậu Giang'].map(
+                {['Nước tẩy trang bí đao', 'Cà phê Đắk Lắk', 'Sữa chống nắng Sen', 'Gel rửa mặt cà phê', 'Nước dưỡng tóc bưởi', 'Son dưỡng dừa Bến Tre', 'Tẩy da chết môi'].map(
                   (kw) => (
                     <button
                       key={kw}

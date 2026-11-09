@@ -61,8 +61,8 @@ export const Categories: React.FC<CategoriesProps> = ({
           </div>
         </div>
 
-        {/* 6 Category Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* 4 Category Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {CATEGORIES_DATA.map((cat) => {
             const Icon = getCategoryIcon(cat.id);
             const isSelected = selectedCategory === cat.id;
@@ -74,7 +74,7 @@ export const Categories: React.FC<CategoriesProps> = ({
                 className={`text-left p-6 rounded-xl border transition-all duration-200 cursor-pointer flex flex-col justify-between group ${
                   isSelected
                     ? 'bg-[#234A35] text-white border-[#193928] shadow-md'
-                    : 'bg-[#FAF8F4] text-[#243329] border-[#E3DC handle-border-[#234A35]/30 hover:border-[#234A35]/40 hover:bg-white'
+                    : 'bg-[#FAF8F4] text-[#243329] border-[#E3DACB] hover:border-[#234A35]/40 hover:bg-white'
                 }`}
               >
                 <div>
